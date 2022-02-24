@@ -6,7 +6,7 @@ const custom_alert = document.querySelector('.custom-alert');
 const skillLload = () =>{
         const skill_loads = document.querySelector('#skill_select');
 
-    axios.get('http://localhost:5050/skill').then(data =>{
+    axios.get('https://my-json-server.typicode.com/SakiSalman/dev-server/skill').then(data =>{
 
 
            
@@ -41,7 +41,7 @@ skillLload();
 const alldevLoad =() =>{
 
 
-        axios.get('http://localhost:5050/developers').then( res =>{
+        axios.get('https://my-json-server.typicode.com/SakiSalman/dev-server/developers').then( res =>{
 
                 const dev_table = document.querySelector('#dev-table');
                 let dev_list = "";
@@ -91,7 +91,7 @@ dev_addForm.addEventListener('submit', function (e){
             `
                 
         } else {
-            axios.post('http://localhost:5050/developers', {
+            axios.post('https://my-json-server.typicode.com/SakiSalman/dev-server/developers', {
 
                                 id : "",
                                 name : name.value,
@@ -125,10 +125,10 @@ const viewDeveloper = (id) =>{
         
         const dev_details = document.querySelector('#dev_details');
 
-        axios.get('http://localhost:5050/developers/'+ id).then(res=>{
+        axios.get('https://my-json-server.typicode.com/SakiSalman/dev-server/developers/'+ id).then(res=>{
 
 
-                axios.get('http://localhost:5050/skill/'+ id).then(skill =>{
+                axios.get('https://my-json-server.typicode.com/SakiSalman/dev-server/skill/'+ id).then(skill =>{
 
                         dev_details.innerHTML = `
                                         
@@ -217,7 +217,7 @@ const viewDeveloper = (id) =>{
 
         let setattr = delId.getAttribute('delsrc')
 
-        axios.delete('http://localhost:5050/developers/'+ setattr).then( res =>{
+        axios.delete('https://my-json-server.typicode.com/SakiSalman/dev-server/developers/'+ setattr).then( res =>{
                 alldevLoad();
 
         });
@@ -238,7 +238,7 @@ const viewDeveloper = (id) =>{
         let eskill_select = document.getElementById('eskill_select');
         let preview = document.getElementById('epreview');
 
-        axios.get('http://localhost:5050/developers/'+ id).then(res =>{
+        axios.get('https://my-json-server.typicode.com/SakiSalman/dev-server/developers/'+ id).then(res =>{
                 
                 ename.value = res.data.name;
                 edit_id.value = res.data.id;
@@ -264,7 +264,7 @@ const viewDeveloper = (id) =>{
         let eskill_select = document.getElementById('eskill_select');
 
        
-        axios.patch('http://localhost:5050/developers/'+ edit_id.value, {
+        axios.patch('https://my-json-server.typicode.com/SakiSalman/dev-server/developers/'+ edit_id.value, {
 
                         id : "",
                         name : ename.value,
