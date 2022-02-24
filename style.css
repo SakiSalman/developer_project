@@ -1,0 +1,16 @@
+
+
+.devs{
+        width: 1000px;
+        height: auto;
+        margin: 100px auto;
+}
+
+.dev-details-group{
+        display: flex;
+        justify-content: space-between;
+        
+}
+
+
+
